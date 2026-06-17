@@ -1,0 +1,27 @@
+{
+  "name": "@dream-team/backend",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:push": "prisma db push"
+  },
+  "dependencies": {
+    "@dream-team/shared": "*",
+    "@prisma/client": "^6.3.1",
+    "bcryptjs": "^2.4.3",
+    "openai": "^4.85.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "prisma": "^6.3.1",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  }
+}

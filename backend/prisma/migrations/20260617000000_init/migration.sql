@@ -1,0 +1,2 @@
+-- CreateSchema
+-- Initial migration for Dream Team Builder

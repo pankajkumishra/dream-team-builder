@@ -32,17 +32,17 @@ description: "Task list for Dream Team Builder — Team Compatibility Platform"
 
 **Purpose**: Initialize monorepo, tooling, and project structure per plan.md
 
-- [ ] T001 Create npm workspaces monorepo root in `package.json`
-- [ ] T002 [P] Initialize shared package with TypeScript and Zod in `packages/shared/package.json` and `packages/shared/tsconfig.json`
-- [ ] T003 [P] Initialize backend package with Prisma in `backend/package.json` and `backend/tsconfig.json`
-- [ ] T004 [P] Initialize Next.js 15 frontend app in `frontend/package.json` and `frontend/tsconfig.json`
-- [ ] T005 [P] Configure ESLint and Prettier at repository root in `eslint.config.js` and `.prettierrc`
-- [ ] T006 [P] Configure Tailwind CSS in `frontend/tailwind.config.ts` and `frontend/src/app/globals.css`
-- [ ] T007 [P] Initialize shadcn/ui components config in `frontend/components.json`
-- [ ] T008 [P] Configure Vitest for backend in `backend/vitest.config.ts`
-- [ ] T009 [P] Configure Playwright E2E in `frontend/tests/e2e/playwright.config.ts`
-- [ ] T010 Create environment template in `.env.example` (DATABASE_URL, AUTH_SECRET, OPENAI_API_KEY, NEXTAUTH_URL)
-- [ ] T011 Create development setup guide in `README.md`
+- [x] T001 Create npm workspaces monorepo root in `package.json`
+- [x] T002 [P] Initialize shared package with TypeScript and Zod in `packages/shared/package.json` and `packages/shared/tsconfig.json`
+- [x] T003 [P] Initialize backend package with Prisma in `backend/package.json` and `backend/tsconfig.json`
+- [x] T004 [P] Initialize Next.js 15 frontend app in `frontend/package.json` and `frontend/tsconfig.json`
+- [x] T005 [P] Configure ESLint and Prettier at repository root in `eslint.config.js` and `.prettierrc`
+- [x] T006 [P] Configure Tailwind CSS in `frontend/tailwind.config.ts` and `frontend/src/app/globals.css`
+- [x] T007 [P] Initialize shadcn/ui components config in `frontend/components.json`
+- [x] T008 [P] Configure Vitest for backend in `backend/vitest.config.ts`
+- [x] T009 [P] Configure Playwright E2E in `frontend/tests/e2e/playwright.config.ts`
+- [x] T010 Create environment template in `.env.example` (DATABASE_URL, AUTH_SECRET, OPENAI_API_KEY, NEXTAUTH_URL)
+- [x] T011 Create development setup guide in `README.md`
 
 ---
 
@@ -52,19 +52,19 @@ description: "Task list for Dream Team Builder — Team Compatibility Platform"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T012 Define full Prisma schema (User, Profile, Assessment, PastProject, ProjectIntent, TeamAnalysis, CompositionRecommendation, VisibilitySettings, Connection) in `backend/prisma/schema.prisma`
-- [ ] T013 Run initial database migration in `backend/prisma/migrations/`
-- [ ] T014 [P] Create standardized API error helper in `backend/src/lib/errors.ts`
-- [ ] T015 [P] Create authenticated API route wrapper in `backend/src/lib/api-handler.ts`
-- [ ] T016 Configure Auth.js with email/password and OAuth providers in `backend/src/lib/auth.ts`
-- [ ] T017 Create Auth.js catch-all route in `frontend/src/app/api/auth/[...nextauth]/route.ts`
-- [ ] T018 [P] Create OpenAI/Azure LLM client wrapper in `backend/src/lib/llm.ts`
-- [ ] T019 [P] Create shared error response Zod schema in `packages/shared/src/schemas/error.ts`
-- [ ] T020 [P] Create Prisma client singleton in `backend/src/lib/prisma.ts`
-- [ ] T021 Create root app layout with responsive navigation shell in `frontend/src/app/layout.tsx`
-- [ ] T022 Create login page in `frontend/src/app/(auth)/login/page.tsx`
-- [ ] T023 Create register page in `frontend/src/app/(auth)/register/page.tsx`
-- [ ] T024 [P] Unit test for error helper in `backend/tests/unit/errors.test.ts`
+- [x] T012 Define full Prisma schema (User, Profile, Assessment, PastProject, ProjectIntent, TeamAnalysis, CompositionRecommendation, VisibilitySettings, Connection) in `backend/prisma/schema.prisma`
+- [x] T013 Run initial database migration in `backend/prisma/migrations/`
+- [x] T014 [P] Create standardized API error helper in `backend/src/lib/errors.ts`
+- [x] T015 [P] Create authenticated API route wrapper in `backend/src/lib/api-handler.ts`
+- [x] T016 Configure Auth.js with email/password and OAuth providers in `backend/src/lib/auth.ts`
+- [x] T017 Create Auth.js catch-all route in `frontend/src/app/api/auth/[...nextauth]/route.ts`
+- [x] T018 [P] Create OpenAI/Azure LLM client wrapper in `backend/src/lib/llm.ts`
+- [x] T019 [P] Create shared error response Zod schema in `packages/shared/src/schemas/error.ts`
+- [x] T020 [P] Create Prisma client singleton in `backend/src/lib/prisma.ts`
+- [x] T021 Create root app layout with responsive navigation shell in `frontend/src/app/layout.tsx`
+- [x] T022 Create login page in `frontend/src/app/(auth)/login/page.tsx`
+- [x] T023 Create register page in `frontend/src/app/(auth)/register/page.tsx`
+- [x] T024 [P] Unit test for error helper in `backend/tests/unit/errors.test.ts`
 
 **Checkpoint**: Foundation ready — user story implementation can begin
 
@@ -80,34 +80,34 @@ description: "Task list for Dream Team Builder — Team Compatibility Platform"
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T025 [P] [US1] Unit tests for ProfileSchema validation in `packages/shared/src/schemas/profile.test.ts`
-- [ ] T026 [P] [US1] Unit tests for AssessmentSchema validation in `packages/shared/src/schemas/assessment.test.ts`
-- [ ] T027 [P] [US1] Integration tests for profile endpoints in `backend/tests/integration/profile.test.ts`
-- [ ] T028 [P] [US1] E2E test for profile wizard flow in `frontend/tests/e2e/profile.spec.ts`
+- [x] T025 [P] [US1] Unit tests for ProfileSchema validation in `packages/shared/src/schemas/profile.test.ts`
+- [x] T026 [P] [US1] Unit tests for AssessmentSchema validation in `packages/shared/src/schemas/assessment.test.ts`
+- [x] T027 [P] [US1] Integration tests for profile endpoints in `backend/tests/integration/profile.test.ts`
+- [x] T028 [P] [US1] E2E test for profile wizard flow in `frontend/tests/e2e/profile.spec.ts`
 
 ### Implementation for User Story 1
 
-- [ ] T029 [P] [US1] Create ProfileSchema in `packages/shared/src/schemas/profile.ts`
-- [ ] T030 [P] [US1] Create AssessmentSchema in `packages/shared/src/schemas/assessment.ts`
-- [ ] T031 [P] [US1] Create PastProjectSchema in `packages/shared/src/schemas/past-project.ts`
-- [ ] T032 [US1] Implement ProfileService with profileVersion increment on material changes in `backend/src/services/profile/profile.service.ts`
-- [ ] T033 [US1] Implement profile completion status calculator in `backend/src/services/profile/completion.service.ts`
-- [ ] T034 [US1] Implement assessment questionnaire config (20–25 Likert items, 6–8 dimensions) in `backend/src/services/assessment/questions.ts`
-- [ ] T035 [US1] Implement AssessmentService with dimension score computation in `backend/src/services/assessment/assessment.service.ts`
-- [ ] T036 [US1] Implement LLM work-style summary generator in `backend/src/services/assessment/summary.generator.ts`
-- [ ] T037 [US1] Implement PastProjectService in `backend/src/services/profile/past-project.service.ts`
-- [ ] T038 [P] [US1] Implement GET/PATCH `/api/v1/profiles/me` route in `frontend/src/app/api/v1/profiles/me/route.ts`
-- [ ] T039 [P] [US1] Implement GET/PUT `/api/v1/profiles/me/assessment` route in `frontend/src/app/api/v1/profiles/me/assessment/route.ts`
-- [ ] T040 [P] [US1] Implement POST assessment skip route in `frontend/src/app/api/v1/profiles/me/assessment/skip/route.ts`
-- [ ] T041 [P] [US1] Implement past-projects CRUD routes in `frontend/src/app/api/v1/profiles/me/past-projects/route.ts` and `[id]/route.ts`
-- [ ] T042 [US1] Create profile API client in `frontend/src/features/profile/profile.api.ts`
-- [ ] T043 [US1] Create multi-step ProfileWizard container in `frontend/src/features/profile/ProfileWizard.tsx`
-- [ ] T044 [P] [US1] Create SkillsStep component in `frontend/src/features/profile/steps/SkillsStep.tsx`
-- [ ] T045 [P] [US1] Create AssessmentStep component in `frontend/src/features/profile/steps/AssessmentStep.tsx`
-- [ ] T046 [P] [US1] Create GoalsStep component in `frontend/src/features/profile/steps/GoalsStep.tsx`
-- [ ] T047 [P] [US1] Create PastProjectsStep component in `frontend/src/features/profile/steps/PastProjectsStep.tsx`
-- [ ] T048 [US1] Create profile summary page with completion prompts in `frontend/src/app/profile/page.tsx`
-- [ ] T049 [US1] Create profile setup route redirecting incomplete users in `frontend/src/app/profile/setup/page.tsx`
+- [x] T029 [P] [US1] Create ProfileSchema in `packages/shared/src/schemas/profile.ts`
+- [x] T030 [P] [US1] Create AssessmentSchema in `packages/shared/src/schemas/assessment.ts`
+- [x] T031 [P] [US1] Create PastProjectSchema in `packages/shared/src/schemas/past-project.ts`
+- [x] T032 [US1] Implement ProfileService with profileVersion increment on material changes in `backend/src/services/profile/profile.service.ts`
+- [x] T033 [US1] Implement profile completion status calculator in `backend/src/services/profile/completion.service.ts`
+- [x] T034 [US1] Implement assessment questionnaire config (20–25 Likert items, 6–8 dimensions) in `backend/src/services/assessment/questions.ts`
+- [x] T035 [US1] Implement AssessmentService with dimension score computation in `backend/src/services/assessment/assessment.service.ts`
+- [x] T036 [US1] Implement LLM work-style summary generator in `backend/src/services/assessment/summary.generator.ts`
+- [x] T037 [US1] Implement PastProjectService in `backend/src/services/profile/past-project.service.ts`
+- [x] T038 [P] [US1] Implement GET/PATCH `/api/v1/profiles/me` route in `frontend/src/app/api/v1/profiles/me/route.ts`
+- [x] T039 [P] [US1] Implement GET/PUT `/api/v1/profiles/me/assessment` route in `frontend/src/app/api/v1/profiles/me/assessment/route.ts`
+- [x] T040 [P] [US1] Implement POST assessment skip route in `frontend/src/app/api/v1/profiles/me/assessment/skip/route.ts`
+- [x] T041 [P] [US1] Implement past-projects CRUD routes in `frontend/src/app/api/v1/profiles/me/past-projects/route.ts` and `[id]/route.ts`
+- [x] T042 [US1] Create profile API client in `frontend/src/features/profile/profile.api.ts`
+- [x] T043 [US1] Create multi-step ProfileWizard container in `frontend/src/features/profile/ProfileWizard.tsx`
+- [x] T044 [P] [US1] Create SkillsStep component in `frontend/src/features/profile/steps/SkillsStep.tsx`
+- [x] T045 [P] [US1] Create AssessmentStep component in `frontend/src/features/profile/steps/AssessmentStep.tsx`
+- [x] T046 [P] [US1] Create GoalsStep component in `frontend/src/features/profile/steps/GoalsStep.tsx`
+- [x] T047 [P] [US1] Create PastProjectsStep component in `frontend/src/features/profile/steps/PastProjectsStep.tsx`
+- [x] T048 [US1] Create profile summary page with completion prompts in `frontend/src/app/profile/page.tsx`
+- [x] T049 [US1] Create profile setup route redirecting incomplete users in `frontend/src/app/profile/setup/page.tsx`
 
 **Checkpoint**: User Story 1 fully functional — register, complete wizard, view summary
 
@@ -121,29 +121,29 @@ description: "Task list for Dream Team Builder — Team Compatibility Platform"
 
 ### Tests for User Story 2
 
-- [ ] T050 [P] [US2] Unit tests for CompatibilityScorer in `backend/tests/unit/compatibility-scorer.test.ts`
-- [ ] T051 [P] [US2] Unit tests for RiskDetector (skill gap, redundancy, goal conflict) in `backend/tests/unit/risk-detector.test.ts`
-- [ ] T052 [P] [US2] Unit tests for ConfidenceCalculator in `backend/tests/unit/confidence.test.ts`
-- [ ] T053 [P] [US2] Integration tests for analysis endpoints in `backend/tests/integration/analysis.test.ts`
-- [ ] T054 [P] [US2] E2E test for team analysis flow in `frontend/tests/e2e/analysis.spec.ts`
+- [x] T050 [P] [US2] Unit tests for CompatibilityScorer in `backend/tests/unit/compatibility-scorer.test.ts`
+- [x] T051 [P] [US2] Unit tests for RiskDetector (skill gap, redundancy, goal conflict) in `backend/tests/unit/risk-detector.test.ts`
+- [x] T052 [P] [US2] Unit tests for ConfidenceCalculator in `backend/tests/unit/confidence.test.ts`
+- [x] T053 [P] [US2] Integration tests for analysis endpoints in `backend/tests/integration/analysis.test.ts`
+- [x] T054 [P] [US2] E2E test for team analysis flow in `frontend/tests/e2e/analysis.spec.ts`
 
 ### Implementation for User Story 2
 
-- [ ] T055 [P] [US2] Create TeamAnalysis request/response schemas in `packages/shared/src/schemas/analysis.ts`
-- [ ] T056 [US2] Implement CompatibilityScorer (work-style, goals, skills, communication dimensions) in `backend/src/services/compatibility/scorer.ts`
-- [ ] T057 [US2] Implement RiskDetector in `backend/src/services/compatibility/risk-detector.ts`
-- [ ] T058 [US2] Implement ConfidenceCalculator with skipped-assessment penalty in `backend/src/services/compatibility/confidence.ts`
-- [ ] T059 [US2] Implement LLM ExplanationGenerator from structured scores in `backend/src/services/compatibility/explanation.generator.ts`
-- [ ] T060 [US2] Implement AnalysisService (create, poll, list, stale detection via profileVersion) in `backend/src/services/compatibility/analysis.service.ts`
-- [ ] T061 [US2] Hook ProfileService to mark analyses stale on material profile changes in `backend/src/services/profile/profile.service.ts`
-- [ ] T062 [P] [US2] Implement POST `/api/v1/analyses` route in `frontend/src/app/api/v1/analyses/route.ts`
-- [ ] T063 [P] [US2] Implement GET `/api/v1/analyses` list route in `frontend/src/app/api/v1/analyses/route.ts`
-- [ ] T064 [P] [US2] Implement GET `/api/v1/analyses/[id]` route in `frontend/src/app/api/v1/analyses/[id]/route.ts`
-- [ ] T065 [US2] Create analysis API client in `frontend/src/features/analysis/analysis.api.ts`
-- [ ] T066 [US2] Create team member selection page in `frontend/src/app/analysis/new/page.tsx`
-- [ ] T067 [US2] Create AnalysisReport component with dimension scores and risk flags in `frontend/src/features/analysis/AnalysisReport.tsx`
-- [ ] T068 [US2] Create analysis history page in `frontend/src/app/analysis/page.tsx`
-- [ ] T069 [US2] Add single-member rejection with guidance message (422) in `backend/src/services/compatibility/analysis.service.ts`
+- [x] T055 [P] [US2] Create TeamAnalysis request/response schemas in `packages/shared/src/schemas/analysis.ts`
+- [x] T056 [US2] Implement CompatibilityScorer (work-style, goals, skills, communication dimensions) in `backend/src/services/compatibility/scorer.ts`
+- [x] T057 [US2] Implement RiskDetector in `backend/src/services/compatibility/risk-detector.ts`
+- [x] T058 [US2] Implement ConfidenceCalculator with skipped-assessment penalty in `backend/src/services/compatibility/confidence.ts`
+- [x] T059 [US2] Implement LLM ExplanationGenerator from structured scores in `backend/src/services/compatibility/explanation.generator.ts`
+- [x] T060 [US2] Implement AnalysisService (create, poll, list, stale detection via profileVersion) in `backend/src/services/compatibility/analysis.service.ts`
+- [x] T061 [US2] Hook ProfileService to mark analyses stale on material profile changes in `backend/src/services/profile/profile.service.ts`
+- [x] T062 [P] [US2] Implement POST `/api/v1/analyses` route in `frontend/src/app/api/v1/analyses/route.ts`
+- [x] T063 [P] [US2] Implement GET `/api/v1/analyses` list route in `frontend/src/app/api/v1/analyses/route.ts`
+- [x] T064 [P] [US2] Implement GET `/api/v1/analyses/[id]` route in `frontend/src/app/api/v1/analyses/[id]/route.ts`
+- [x] T065 [US2] Create analysis API client in `frontend/src/features/analysis/analysis.api.ts`
+- [x] T066 [US2] Create team member selection page in `frontend/src/app/analysis/new/page.tsx`
+- [x] T067 [US2] Create AnalysisReport component with dimension scores and risk flags in `frontend/src/features/analysis/AnalysisReport.tsx`
+- [x] T068 [US2] Create analysis history page in `frontend/src/app/analysis/page.tsx`
+- [x] T069 [US2] Add single-member rejection with guidance message (422) in `backend/src/services/compatibility/analysis.service.ts`
 
 **Checkpoint**: User Stories 1 and 2 work independently — profile + team analysis
 
@@ -157,19 +157,19 @@ description: "Task list for Dream Team Builder — Team Compatibility Platform"
 
 ### Tests for User Story 3
 
-- [ ] T070 [P] [US3] Integration tests for composition endpoint in `backend/tests/integration/composition.test.ts`
-- [ ] T071 [P] [US3] E2E test for composition flow in `frontend/tests/e2e/composition.spec.ts`
+- [x] T070 [P] [US3] Integration tests for composition endpoint in `backend/tests/integration/composition.test.ts`
+- [x] T071 [P] [US3] E2E test for composition flow in `frontend/tests/e2e/composition.spec.ts`
 
 ### Implementation for User Story 3
 
-- [ ] T072 [P] [US3] Create ProjectIntent and CompositionRecommendation schemas in `packages/shared/src/schemas/composition.ts`
-- [ ] T073 [US3] Implement domain role templates (saas, research, hackathon, student) in `backend/src/services/composition/role-templates.ts`
-- [ ] T074 [US3] Implement CompositionService with LLM rationale generation in `backend/src/services/composition/composition.service.ts`
-- [ ] T075 [US3] Implement filled/gap role logic for existing team members in `backend/src/services/composition/gap-analyzer.ts`
-- [ ] T076 [P] [US3] Implement POST `/api/v1/compositions` route in `frontend/src/app/api/v1/compositions/route.ts`
-- [ ] T077 [US3] Create composition API client in `frontend/src/features/composition/composition.api.ts`
-- [ ] T078 [US3] Create project description form page in `frontend/src/app/composition/new/page.tsx`
-- [ ] T079 [US3] Create CompositionResults component with roles and insights in `frontend/src/features/composition/CompositionResults.tsx`
+- [x] T072 [P] [US3] Create ProjectIntent and CompositionRecommendation schemas in `packages/shared/src/schemas/composition.ts`
+- [x] T073 [US3] Implement domain role templates (saas, research, hackathon, student) in `backend/src/services/composition/role-templates.ts`
+- [x] T074 [US3] Implement CompositionService with LLM rationale generation in `backend/src/services/composition/composition.service.ts`
+- [x] T075 [US3] Implement filled/gap role logic for existing team members in `backend/src/services/composition/gap-analyzer.ts`
+- [x] T076 [P] [US3] Implement POST `/api/v1/compositions` route in `frontend/src/app/api/v1/compositions/route.ts`
+- [x] T077 [US3] Create composition API client in `frontend/src/features/composition/composition.api.ts`
+- [x] T078 [US3] Create project description form page in `frontend/src/app/composition/new/page.tsx`
+- [x] T079 [US3] Create CompositionResults component with roles and insights in `frontend/src/features/composition/CompositionResults.tsx`
 
 **Checkpoint**: Composition recommendations work without discovery
 
@@ -183,26 +183,26 @@ description: "Task list for Dream Team Builder — Team Compatibility Platform"
 
 ### Tests for User Story 4
 
-- [ ] T080 [P] [US4] Integration tests for discovery and connections in `backend/tests/integration/discovery.test.ts`
-- [ ] T081 [P] [US4] E2E test for discovery and connection flow in `frontend/tests/e2e/discovery.spec.ts`
+- [x] T080 [P] [US4] Integration tests for discovery and connections in `backend/tests/integration/discovery.test.ts`
+- [x] T081 [P] [US4] E2E test for discovery and connection flow in `frontend/tests/e2e/discovery.spec.ts`
 
 ### Implementation for User Story 4
 
-- [ ] T082 [P] [US4] Create VisibilitySettings schema in `packages/shared/src/schemas/visibility.ts`
-- [ ] T083 [P] [US4] Create Connection schema in `packages/shared/src/schemas/connection.ts`
-- [ ] T084 [US4] Implement DiscoveryService with SQL ranking and opt-in filter in `backend/src/services/discovery/discovery.service.ts`
-- [ ] T085 [US4] Implement lightweight compatibility preview scorer in `backend/src/services/discovery/preview-scorer.ts`
-- [ ] T086 [US4] Implement ConnectionService (create, accept, decline, list) in `backend/src/services/discovery/connection.service.ts`
-- [ ] T087 [P] [US4] Implement GET `/api/v1/discovery` route in `frontend/src/app/api/v1/discovery/route.ts`
-- [ ] T088 [P] [US4] Implement GET `/api/v1/discovery/[profileId]` route in `frontend/src/app/api/v1/discovery/[profileId]/route.ts`
-- [ ] T089 [P] [US4] Implement PUT `/api/v1/profiles/me/visibility` route in `frontend/src/app/api/v1/profiles/me/visibility/route.ts`
-- [ ] T090 [P] [US4] Implement POST/PATCH/GET `/api/v1/connections` routes in `frontend/src/app/api/v1/connections/route.ts` and `[id]/route.ts`
-- [ ] T091 [US4] Create discovery API client in `frontend/src/features/discovery/discovery.api.ts`
-- [ ] T092 [US4] Create discovery browse page with filters in `frontend/src/app/discovery/page.tsx`
-- [ ] T093 [US4] Create CandidateDetail component in `frontend/src/features/discovery/CandidateDetail.tsx`
-- [ ] T094 [US4] Create VisibilitySettings panel in `frontend/src/features/discovery/VisibilitySettings.tsx`
-- [ ] T095 [US4] Create connections inbox page in `frontend/src/app/connections/page.tsx`
-- [ ] T096 [US4] Add empty-state guidance when no matches found in `frontend/src/features/discovery/EmptyDiscovery.tsx`
+- [x] T082 [P] [US4] Create VisibilitySettings schema in `packages/shared/src/schemas/visibility.ts`
+- [x] T083 [P] [US4] Create Connection schema in `packages/shared/src/schemas/connection.ts`
+- [x] T084 [US4] Implement DiscoveryService with SQL ranking and opt-in filter in `backend/src/services/discovery/discovery.service.ts`
+- [x] T085 [US4] Implement lightweight compatibility preview scorer in `backend/src/services/discovery/preview-scorer.ts`
+- [x] T086 [US4] Implement ConnectionService (create, accept, decline, list) in `backend/src/services/discovery/connection.service.ts`
+- [x] T087 [P] [US4] Implement GET `/api/v1/discovery` route in `frontend/src/app/api/v1/discovery/route.ts`
+- [x] T088 [P] [US4] Implement GET `/api/v1/discovery/[profileId]` route in `frontend/src/app/api/v1/discovery/[profileId]/route.ts`
+- [x] T089 [P] [US4] Implement PUT `/api/v1/profiles/me/visibility` route in `frontend/src/app/api/v1/profiles/me/visibility/route.ts`
+- [x] T090 [P] [US4] Implement POST/PATCH/GET `/api/v1/connections` routes in `frontend/src/app/api/v1/connections/route.ts` and `[id]/route.ts`
+- [x] T091 [US4] Create discovery API client in `frontend/src/features/discovery/discovery.api.ts`
+- [x] T092 [US4] Create discovery browse page with filters in `frontend/src/app/discovery/page.tsx`
+- [x] T093 [US4] Create CandidateDetail component in `frontend/src/features/discovery/CandidateDetail.tsx`
+- [x] T094 [US4] Create VisibilitySettings panel in `frontend/src/features/discovery/VisibilitySettings.tsx`
+- [x] T095 [US4] Create connections inbox page in `frontend/src/app/connections/page.tsx`
+- [x] T096 [US4] Add empty-state guidance when no matches found in `frontend/src/features/discovery/EmptyDiscovery.tsx`
 
 **Checkpoint**: All four user stories independently functional
 
@@ -212,15 +212,15 @@ description: "Task list for Dream Team Builder — Team Compatibility Platform"
 
 **Purpose**: Accessibility, security, performance, and validation across stories
 
-- [ ] T097 [P] Add database indexes per data-model.md in `backend/prisma/schema.prisma`
-- [ ] T098 Run and apply index migration in `backend/prisma/migrations/`
-- [ ] T099 [P] Add WCAG 2.1 AA fixes (focus rings, aria labels, keyboard nav) across `frontend/src/features/`
-- [ ] T100 [P] Add responsive layout polish for mobile viewports in `frontend/src/app/globals.css`
-- [ ] T101 Add API rate limiting middleware in `backend/src/lib/rate-limit.ts`
-- [ ] T102 Verify error responses never expose stack traces in `backend/src/lib/errors.ts`
-- [ ] T103 [P] Add loading and error boundary components in `frontend/src/components/LoadingState.tsx` and `ErrorBoundary.tsx`
-- [ ] T104 Run quickstart validation scenarios in `specs/001-team-compatibility/quickstart.md`
-- [ ] T105 Update deployment and environment docs in `README.md`
+- [x] T097 [P] Add database indexes per data-model.md in `backend/prisma/schema.prisma`
+- [x] T098 Run and apply index migration in `backend/prisma/migrations/`
+- [x] T099 [P] Add WCAG 2.1 AA fixes (focus rings, aria labels, keyboard nav) across `frontend/src/features/`
+- [x] T100 [P] Add responsive layout polish for mobile viewports in `frontend/src/app/globals.css`
+- [x] T101 Add API rate limiting middleware in `backend/src/lib/rate-limit.ts`
+- [x] T102 Verify error responses never expose stack traces in `backend/src/lib/errors.ts`
+- [x] T103 [P] Add loading and error boundary components in `frontend/src/components/LoadingState.tsx` and `ErrorBoundary.tsx`
+- [x] T104 Run quickstart validation scenarios in `specs/001-team-compatibility/quickstart.md`
+- [x] T105 Update deployment and environment docs in `README.md`
 
 ---
 

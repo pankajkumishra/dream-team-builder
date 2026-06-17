@@ -1,0 +1,208 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum CompletionStatus {
+  draft
+  partial
+  complete
+}
+
+enum ProjectOutcome {
+  completed
+  ongoing
+  abandoned
+}
+
+enum ProjectDomain {
+  saas
+  research
+  hackathon
+  student
+  other
+}
+
+enum ProjectStage {
+  idea
+  mvp
+  growth
+}
+
+enum ConfidenceLevel {
+  high
+  medium
+  low
+}
+
+enum AnalysisStatus {
+  pending
+  complete
+  stale
+  failed
+}
+
+enum ConnectionStatus {
+  pending
+  accepted
+  declined
+  withdrawn
+}
+
+model User {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  emailVerified DateTime?
+  name          String?
+  image         String?
+  passwordHash  String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  profile                   Profile?
+  visibilitySettings        VisibilitySettings?
+  teamAnalyses              TeamAnalysis[]
+  compositionRecommendations CompositionRecommendation[]
+  connectionsInitiated      Connection[] @relation("ConnectionInitiator")
+  connectionsReceived       Connection[] @relation("ConnectionRecipient")
+}
+
+model Profile {
+  id               String           @id @default(uuid())
+  userId           String           @unique
+  headline         String?          @db.VarChar(120)
+  bio              String?          @db.VarChar(500)
+  skills           Json             @default("[]")
+  experienceYears  Int?
+  expertiseAreas   String[]         @default([])
+  goals            Json             @default("{}")
+  workStyleSummary String?
+  completionStatus CompletionStatus @default(draft)
+  profileVersion   Int              @default(1)
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  assessment   Assessment?
+  pastProjects PastProject[]
+  projectIntents ProjectIntent[]
+
+  @@index([completionStatus])
+}
+
+model Assessment {
+  id              String    @id @default(uuid())
+  profileId       String    @unique
+  responses       Json      @default("{}")
+  dimensionScores Json      @default("{}")
+  completedAt     DateTime?
+  skipped         Boolean   @default(false)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+}
+
+model PastProject {
+  id          String          @id @default(uuid())
+  profileId   String
+  title       String          @db.VarChar(100)
+  description String?         @db.VarChar(500)
+  role        String?
+  outcome     ProjectOutcome?
+  teamSize    Int?
+  highlights  String[]        @default([])
+  createdAt   DateTime        @default(now())
+
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+}
+
+model ProjectIntent {
+  id          String        @id @default(uuid())
+  profileId   String
+  title       String
+  domain      ProjectDomain
+  stage       ProjectStage
+  description String        @db.VarChar(1000)
+  timeline    String?
+  goals       String[]      @default([])
+  createdAt   DateTime      @default(now())
+
+  profile                    Profile                     @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  teamAnalyses               TeamAnalysis[]
+  compositionRecommendations CompositionRecommendation[]
+}
+
+model TeamAnalysis {
+  id                    String          @id @default(uuid())
+  requesterId           String
+  projectIntentId       String?
+  memberProfileIds      String[]
+  dimensionScores       Json            @default("{}")
+  successProbability    Float?
+  confidenceLevel       ConfidenceLevel @default(medium)
+  riskFlags             Json            @default("[]")
+  explanations          Json            @default("{}")
+  status                AnalysisStatus  @default(pending)
+  memberProfileVersions Json            @default("{}")
+  createdAt             DateTime        @default(now())
+  completedAt           DateTime?
+
+  requester     User           @relation(fields: [requesterId], references: [id], onDelete: Cascade)
+  projectIntent ProjectIntent? @relation(fields: [projectIntentId], references: [id], onDelete: SetNull)
+
+  @@index([requesterId, createdAt])
+}
+
+model CompositionRecommendation {
+  id                       String   @id @default(uuid())
+  requesterId              String
+  projectIntentId          String
+  existingMemberProfileIds String[] @default([])
+  recommendedRoles         Json     @default("[]")
+  filledRoles              Json     @default("[]")
+  gapRoles                 Json     @default("[]")
+  insights                 Json     @default("[]")
+  rationale                String?
+  createdAt                DateTime @default(now())
+
+  requester     User          @relation(fields: [requesterId], references: [id], onDelete: Cascade)
+  projectIntent ProjectIntent @relation(fields: [projectIntentId], references: [id], onDelete: Cascade)
+}
+
+model VisibilitySettings {
+  id                    String   @id @default(uuid())
+  userId                String   @unique
+  discoverable          Boolean  @default(false)
+  showSkills            Boolean  @default(true)
+  showGoals             Boolean  @default(true)
+  showAssessmentSummary Boolean  @default(true)
+  showPastProjects      Boolean  @default(false)
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([discoverable])
+}
+
+model Connection {
+  id                   String           @id @default(uuid())
+  initiatorId          String
+  recipientId          String
+  status               ConnectionStatus @default(pending)
+  compatibilityPreview Json             @default("{}")
+  message              String?          @db.VarChar(300)
+  createdAt            DateTime         @default(now())
+  respondedAt          DateTime?
+
+  initiator User @relation("ConnectionInitiator", fields: [initiatorId], references: [id], onDelete: Cascade)
+  recipient User @relation("ConnectionRecipient", fields: [recipientId], references: [id], onDelete: Cascade)
+
+  @@unique([initiatorId, recipientId])
+  @@index([recipientId, status])
+}
